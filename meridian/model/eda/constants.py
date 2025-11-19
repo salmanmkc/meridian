@@ -31,3 +31,18 @@ MEDIA_IMPRESSIONS_SCALED = 'media_impressions_scaled'
 IMPRESSION_SHARE_SCALED = 'impression_share_scaled'
 SPEND_SHARE = 'spend_share'
 LABEL = 'label'
+
+# Report constants
+REPORT_TITLE = 'Meridian Exploratory Data Analysis Report'
+RELATIONSHIP_BETWEEN_VARIABLES_CARD_ID = 'relationship-among-variables'
+RELATIONSHIP_BETWEEN_VARIABLES_CARD_TITLE = 'Relationship Among the Variables'
+PAIRWISE_CORRELATION_CHART_ID = 'pairwise-correlation-chart'
+
+
+# Finding messages
+PAIRWISE_CORRELATION_CHECK_INFO = (
+    'Please review the computed pairwise correlations. Note that'
+    ' high pairwise correlation may cause model identifiability'
+    ' and convergence issues. Consider combining the variables if'
+    ' high correlation exists.'
+)

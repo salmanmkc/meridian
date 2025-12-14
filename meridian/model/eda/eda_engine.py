@@ -1546,12 +1546,7 @@ class EDAEngine:
       findings.append(
           eda_outcome.EDAFinding(
               severity=eda_outcome.EDASeverity.INFO,
-              explanation=(
-                  'Please review the computed pairwise correlations. Note that'
-                  ' high pairwise correlation may cause model identifiability'
-                  ' and convergence issues. Consider combining the variables if'
-                  ' high correlation exists.'
-              ),
+              explanation=(eda_constants.PAIRWISE_CORRELATION_CHECK_INFO),
           )
       )
 
@@ -1610,12 +1605,7 @@ class EDAEngine:
       findings.append(
           eda_outcome.EDAFinding(
               severity=eda_outcome.EDASeverity.INFO,
-              explanation=(
-                  'Please review the computed pairwise correlations. Note that'
-                  ' high pairwise correlation may cause model identifiability'
-                  ' and convergence issues. Consider combining the variables if'
-                  ' high correlation exists.'
-              ),
+              explanation=(eda_constants.PAIRWISE_CORRELATION_CHECK_INFO),
           )
       )
 
@@ -2162,25 +2152,11 @@ class EDAEngine:
     findings = [
         eda_outcome.EDAFinding(
             severity=eda_outcome.EDASeverity.INFO,
-            explanation=(
-                'This check regresses each variable against time as a'
-                ' categorical variable. In this case, high R-squared indicates'
-                ' low geo variation of a variable. This could lead to a weakly'
-                ' identifiable and non-converging model if a large number of'
-                ' knots are used. Consider dropping the variable with very high'
-                ' R-squared or reducing `knots` argument in `ModelSpec`.'
-            ),
+            explanation=eda_constants.R_SQUARED_TIME_INFO,
         ),
         eda_outcome.EDAFinding(
             severity=eda_outcome.EDASeverity.INFO,
-            explanation=(
-                'This check regresses each variable against geo as a'
-                ' categorical variable. In this case, high R-squared indicates'
-                ' low time variation of a variable. This could lead to a weakly'
-                ' identifiable and non-converging model due to geo main'
-                ' effects. Consider dropping the variable with very high'
-                ' R-squared.'
-            ),
+            explanation=eda_constants.R_SQUARED_GEO_INFO,
         ),
     ]
 
